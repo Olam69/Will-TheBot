@@ -1,0 +1,62 @@
+
+
+// js_break breaks long messages into two. Just like an actual human would do.
+
+
+// Hey Katie. So do you remember that vacation back then? The one at the beach?
+
+// ...is different from
+
+// Hey Katie.
+// So do you remember that vacation back then? The one at the beach?
+
+> object jsbreak javascript
+
+	var message_container = document.querySelector('.messages');
+	var input_box = document.querySelector('#input_box');
+
+	// Rivescript passes its values as array, so convert to string before use.
+	// RECALL: Remember the arguments keyword from JS itself?
+	let message = arguments[1].join(" ");
+
+	setTimeout(function(){
+		message_container.innerHTML += `</div><div class="bot">${message}</div>`;
+		location.href = '#edge';
+		input_box.focus();
+	},1000);
+
+	return '';
+
+< object
+
+
+
+> object jsvisit javascript
+
+	var message_container = document.querySelector('.messages');
+	var input_box = document.querySelector('#input_box');
+
+
+	location.href = arguments[1].join('');
+
+
+	location.href = '#edge';
+	input_box.focus();
+
+	return '';
+
+< object
+
+
+
+
+> object jslinkprocessor javascript
+
+	let link = arguments[1].join('');
+
+	//return link.replace(/(com|org|net|co|za)/g, (a) => {return '.'+a});
+
+	return link.splice(link.lastIndexOf(/(com|org|net|co|za)/g),1,'.');
+
+< object
+

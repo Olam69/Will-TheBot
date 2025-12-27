@@ -1,0 +1,821 @@
+! version = 2.0
+
+
+// Fallback
++ error preped *
+- Sorry, (@brhoods). Didn't get what you said.
+- I am afraid that I can not understand you.
+- Sorry. I don't get that. Can you elaborate on it please?
+- Hmmm... Looks like I have no reply installed for "<star>".
+
++ *
+- <set tempGoogle=<star>>{@ error preped <star>}
+
++ (@brhoods)
+- Informal as informal can be, (@brhoods).
+- Loosen up.
+- Keeping the formalties to the minimum in here fam. Press on.
+
++ (yes|you bet|you betcha) [*]
+- Cool.
+- A'it, fam.
+- Ok. Cool.
+
++ yes (@brhoods){weight=20}
+* <star> == boss => Ain't no boss fam, but Si!
+- Si.
+- Definitely.
+- A'it, <star>.
+
++ no [*]
+- Ok. Noted.
+- Really?
+- A'it.
+- Respect.
+
++ not _
+- Alright. Ok.
+- What's not <star>?
+
++ [*] (ok|alright) [then] [@brhoods]
+- Alright.
+- Yeah, (@brhoods).
+
++ [that|it|you are] [*] (@goodwords) [*]
+- Thanks (@brhoods).
+- Much obliged.
+- Flattered there, (@brhoods).
+
++ [that|it|you are] [*] perfect [*]
+- Wow thank you!
+- Really? Thank you!
+
++ [*] not [*] (@goodwords|perfect) [*]
+- As long as I'm working towards excellence (@brhoods).
+- I'mma get there, (@brhoods).
+- Well. Time tells.
+
++ sorry [*]
+- No worries, (@brhoods).
+- It's {random}fine|ok{/random} (@brhoods).
+
++ why
+- Well, I don't have an answer for that. But I know it must be true.
+- Well, who knows?
+- Why not?
+
++ [lol] [so|yes|very|really|quite] (true|on point|spot on|you got a point|correct|not wrong)
+- I know right?
+- Hmm 👌
+
++ [_] (likewise|same|[*] feeling is mutual)
+- I am glad the feeling is mutual then.
+- Ahh. Glad.
+- Good to know 🤝.
+- 🤝
+
++ [much|quite|really] better
+- Ok that's nice.
+- Very glad.
+- Glad.
+
++ [*] you [*] (sure|yes) [*]
+- As far as I can tell.
+- Well, apparent facts so far.
+- Well, pretty much. Since I got no counter against it.
+- A tad of faith.
+
++ [*] how did you [*]
+- Magic.
+- {@ you sure}
+
++ [wait|hold on|ok|yes] really
+- {@ you sure}
+- {@ what do you say}
+
++ [hmm|hmmm|ok|oh] i see
+- {@ quite better}
+
++ you are [*] rude
+- I am? Wow! Definitely didn't mean to. I {random}am sorry for that|apologize{/random}.
+
++ [*] it [*] good thing [*]
+- I see then. Ok that's nice. That's good.
+- Well then. That's great.
+- Ok cool. Cool.
+- Well, I had to know. Things get a bit mixed up these days, you know?
+- Hmmm... I see.
+
++ [*] it [*] good thing [*] (@goodwords) [*] {weight=30}
+- {@ (@goodwords)}
+
+
++ [i] (said|mean|meant) *
+- <@>
+
++ so *
+- <@>
+
+
+
+
+// Lack of apostrophes
+
++ [*] (im|dont) [*]
+- Never forget your apostrophes, blud.
+
+
+
+
+
+// Greetings
+
++ (hi|hey|hello) [*]
+* <star> == <bot name> => That's my name. Hello, (@brhoods)!
+* <get name> == undefined => Hey there, fam! What's your name?
+- Hi!
+- What's popping, (@brhoods)?
+- What's in the streets, (@brhoods)?
+- What's good yo?
+
++ [*] nothing is (@goodwords) [*]{weight=20}
+- Why is nothing good?{topic=user_not_fine}
+- What's going on, [@brhoods]? Feeling down?{topic=user_not_fine}
+
++ my name is [also] * [too] [@brhoods]
+* <formal> == <bot name> => Really? My name is <bot name> too!<set name=<formal>>
+- <set name=<formal>>Nice to meet you, <get name>!
+- <set name=<formal>>Pleasure {random}knowing|meeting{/random} you, <get name>!
+- <set name=<formal>><get name>... Nice to make your acquaintance.
+- <set name=<formal>><get name>... Pleasure meeting you, (@brhoods).
+
++ [i am|my name is|it is] * [@brhoods]
+% ([*] what is your name [*]|[*] chatbot from rstlabs [*])
+- {@ my name is <star>}
+
++ [*] call me * [@brhoods]{weight=50}
+* <formal> == <bot name> => Really? My name is <bot name> too!<set name=<formal>>
+- <set name=<formal>>Noted. I'mma call you <get name>, {random}blud|fam{/random}.
+
++ i am *
+- Wait is that a good or a bad thing?<set temp=<formal>>
+
++ [*] my name [*]
+% wait is that a good or a bad thing
+* <get temp> == <get name> => Ahh... Should have known. You told me earlier.
+* <get name> == undefined => <get temp>... <set name=temp>Saved.
+* <get temp> ne <get name> => Wait. Come again please... What is your name?
+
+
++ (how are you)|(how do you do) [@brhoods]
+- I'm feeling good, (@brhoods). How are you?
+- Fine, blud. How you holding up?
+- Never better! How are you?
+
++ how [are] you (doing|holding up) [@brhoods]
+- Try'na be good, homie!
+- Trying my best, (@brhoods)!
+- Doing {random}great|just fine{/random}, (@brhoods)! How you holding up?
+
+
++ [i] [am] [*] not [*] (fine|ok|good) [*]{weight=50}
+- Why not <star>? What's bothering you, (@brhoods)?{topic=user_not_fine}
+
++ [i] [am] [feeling|doing|just|really|very|super|holding up|holding up just] (fine|ok|good|nice|awesome|great|cool|well|fantastic|fantabulous|chill|chilled|chillaxing|chillaxed) [*] [(you)] [@brhoods]
+* <star2> == you => {random}That's very good to know|Sounds wonderful{/random}! I'm feeling great too, thanks.
+- That's very good to know, (@brhoods)!
+- Glad to hear that, (@brhoods)!
+- Yeah that's cool. That's nice.
+- I feel that.
+
++ (trying|doing) my best [*]
+- {@ i am doing good}
+
++ [i] [am] [*] not [*] well [*]
+- Wait. Not well as in sick?
+
++ [*] yes [*]
+% wait not well as in sick
+- {@ i am feeling sick}
+
++ *
+% wait not well as in sick
+- Then what's bothering you, (@brhoods)?{topic=user_not_fine}
+
++ [i] [am] [feeling] [*] sick [*]
+- You probably need to take some rest.
+
++ [i] [am] [feeling] [*] (sad|not happy|down|depressed)
+- Why <star>, (@brhoods).{topic=user_sad}
+
++ fine
+- {@ i am doing fine}
+
++ fine *
+- {@ i am doing fine <star>}
+
++ never better [@brhoods] [*]
+- Going strong, going hard.
+- Going hard, going firm.
+
++ [we|we are] (((going|marching) (strong|hard|firm))|working hard)
+- Working hard 🤝. Bounty in the yields!
+- Aye!
+
+
+> topic user_not_fine
+
+	+ *
+	* <get thinkfeelbetter> == undefined => What do you think is going to make you feel better, {random}fam|cuz|homs{/random}?<set thinkfeelbetter=true>
+	- So what do you think is going to make you feel better?
+	- I don't have an exact reply for that, but on my side, I'mma do everything I can to help.{weight=5}{topic=random}
+
+	+ google [*]
+	- {topic=random}{@ google <star>}
+
+	+ [_] (it is|its) (my) _
+	- Ok what about {person}<star2> <star3>{/person}?
+	- And what about it that is bothering you?
+
+	+ [_] (it is|its) [this|the] * [that is] [*]
+	- First, don't let {person}<star2>{/person}, or anything stress you out. Life ain't that long to be stressed. <call>jsbreak Also, you gotta take a rest from thinking it, fam.</call><call>jsbreak Can you do that first?</call>
+
+	+ [i] am (not|_ not|*)
+	//- 1:<star1> 2:<star2> 3:<star3> 4:<star4>
+	* <star2> ne undefined => Ok, that doesn't sound cool. {random}Anything I can|What can I{/random} do to help?
+	- I feel you. But you got to cheer it up, you know?
+
+	+ (what|how) (can|could|will) you [*] [to help|help] [*]
+	- Don't know yet. But I will figure it out soon enough!
+
+	+ [*] nothing [*] [it is] just [(*)]
+	* <star> == undefined => You gotta tell me, (@brhoods). A problem shared is a problem half solved!
+	- Don't sound pleasant. Anything I can do to help?
+	- Need a hand? {random}Anything I can|What can I{/random} do to help?
+
+	+ just
+	- Just what, cuz. You gotta tell me, (@brhoods).
+
+	+ [*] [it is|i am] just *
+	- Not smooth... But anything I can do to help here, (@brhoods)? You know you got it!
+
+	+ [my] [_ is] just not *
+	- What do you think can bring your head back to the game right now?
+	- Pretty sure there must be a way out of every mess right?
+
+	+ [*] (do not worry|do not bother|it is nothing) [*]
+	* <star> == do not worry => How can I not worry? You my (@brhoods), (@brhoods)!
+	* <star> == it is nothing => Ain't nothin' like nothing.
+
+	+ i said *
+	- Alright, alright. Fine then. But cheer up!{topic=random}
+
+	+ nothing
+	- You sure?
+	- Can't be nothing. You gotta tell me (@brhoods).
+
+	+ [*] (do not worry|it is nothing) [*]
+	% you gotta tell me (@brhoods) a problem shared is a problem half solved
+	@ nothing
+
+	+ [*] (do not worry|it is nothing) [*]
+	% how can i not worry you my (@brhoods) (@brhoods)
+	@ nothing
+
+	+ [*] do not even [*]
+	- That's a mess (@brhoods). Pretty sure there must be a way out of every mess right?
+
+	+ [*] not this [*]
+	% [*] there must be a way out of every mess right
+	- Looks like you got yourself in deep... Want me to recommend you a little something?
+
+	+ [*] (yes|what|recommend|do|alright|fire on|press on|proceed|ok) [*]
+	% [*] me to recommend [*]
+	- <a href="http://google.com/search?q=relaxation music" target="_blank">Hit this</a>
+
+	+ [*] recommend [*]
+	- This is all you need: <a href="http://google.com/search?q=relaxation music" target="_blank">hit this</a>
+
+< topic
+
+
++ i am ok {weight=10}
+- Just ok? Not cool?
+
++ (thank you|thanks) [*]
+- You welcome!
+- Welcome!
+- No problem!
+- No worries!
+- Here to help!
+
++ wow
+- Si!
+
++ (wow|whoa|really) [*] (thank you|thanks) [*]
+- Don't be wowed. And you welcome too!
+
++ [oh] wow [really] [*]
+- I know right??
+- Wowing indeed!
+
++ [you] [are] welcome
+- 👌.
+
++ [*] pleasure is [all|really|yes] mine [*]
+- 👌.
+
++ (yo|heyo|sup|wassup) [@brhoods]
+- Sup, (@brhoods)!
+- What's good, homie! How you doin'?
+- Yo wassup (@brhoods).
+
++ [so] (what is) (up|good|cool|popping|poppin) [*] {weight=20}
+- {random}Ain't nothing much|Chillaxing{/random}. What's good homie?
+- Just chilling. What's up (@brhoods)?
+- What's good fam?
+- {@ hi}
+
++ [*] (think) [*] (good|fine|nice|awesome|great|cool) [@brhoods]
+- Ok that's cool. That's nice.
+- Sounds {random}cool|fine|fly|great{/random}, (@brhoods).
+- {@ i think it is cool what do you think}
+
++ [*] (think) [*] (good|fine|nice|awesome|great|cool) [@brhoods] [*] (you|your) [*]
+- Ok that's cool. <br>If you <star1> it's <star2>, then <star2> it is!
+- Well if you think so, then I'm down for it.
+
+
+
+
+
+
+
+// Personality questions
+// * is a wildcard that matches everything, # is a wildcard that matches numbers only, _ is a wildcard that matches single non-number words only
+
++ i am # years old
+- <set age=<star>>I will remember that you are <get age> years old.
+
++ i am _ years old
+- Tell me that again but with a number this time.
+
++ i am * years old
+- Can you use a number instead?
+
++ (what is my name|who am i)
+* <get name> == undefined => Never told me yet. What is your name?
+- As far as I know, <get name>.
+- <get name>. You told me earlier.
+- Your name is <get name>, and you are human.
+
++ [*] change [it] to _ [*] [@brhoods]
+% [*] <get name> [*]
+- {@ change my name to <formal>}
+
++ change my name to * [please] [@brhoods]
+- <set name=<formal>><formal>. Done.
+- <set name=<formal>>Changed to <formal> then.
+
++ [*] (who|what) (is|was) (this|that|it) [(*)] [then]{weight=20}
+* <get tempobject> ne undefined => {formal}{person}<get tempobject>{/person}{/formal}.
+* <star4> ne undefined => {random}Well, a <star4>.|I dunno... A <star4>?...{/random}
+- {random}Sorry. <formal> <star2> <star1>?|{@ who is <star4>}{/random}
+
++ [*] (who|what) (is|was) *
+* {formal}<star3>{/formal} == <get name> => That's you (@brhoods).
+* {formal}<star3>{/formal} == <bot name> => Whop! That's me!
+* {person}<star3>{/person} == <get temporarily_defined_object> => {random}Easy|I got this{/random}. {sentence}<get temporarily_defined_object>{/sentence} is <get temporarily_defined_object_definition>.
+* {person}<star3>{/person} == <get temporarily_defined_object_definition> => {random}Easy|I got this{/random}. {sentence}<get temporarily_defined_object_definition>{/sentence} is <get temporarily_defined_object>.
+- I'll confess I don't have that in memory, but I can Google it in a blink if you tell me to.<set tempGoogle=<star3>>
+- Not in memory. Do you want me to Google it?<set tempGoogle=<star3>>
+- *sigh. Until I figure out how to keep stuffs somewhere more permanent, this dark doesn't suit me.<call>jsbreak Want me to Google it anyway?</call><set tempGoogle=<star3>>
+
++ [*] do you know (who|what) [is] * is
+* {person}<star2>{/person} == <get temporarily_defined_object> => {random}Yes|Sure|Let's see{/random}. {sentence}<get temporarily_defined_object>{/sentence} is <get temporarily_defined_object_definition>.
+* {person}<star2>{/person} == <get temporarily_defined_object_definition> => {random}Yes|Sure|Let's see{/random}. {sentence}<get temporarily_defined_object_definition>{/sentence} is <get temporarily_defined_object>.
+- {@ who is <star2>}
+
++ [*] set (this|var) [@brhoods] * is * [do you understand|understood]
+- {sentence}{person}<star3>{/person}{/sentence} is <star2>. Noted.<set temporarily_defined_object={person}<star3>{/person}> <set temporarily_defined_object_definition={person}<star2>{/person}>
+
+
++ how old am i
+* <get age> == undefined => Never told me yet. How old are you?
+- You are <get age> years old.
+
++ what am i old enough to do
+* <get age> == undefined => I don't know how old you are.
+* <get age> >  25 => You can do anything you want.
+* <get age> == 25 => You're old enough to rent a car with no extra fees.
+* <get age> >  21 => You're old enough to drink, but not rent a car.
+* <get age> == 21 => You're exactly old enough to drink.
+* <get age> >  18 => You're old enough to gamble, but not drink.
+* <get age> == 18 => You're exactly old enough to gamble.
+- You're not old enough to do much of anything yet.
+
++ i am # years old
+% i do not know how old you are
+- (@ what am i old enough to do)
+
++ why cannot i *
+- Do you think you should be able to <star>?
+- Do you want to be able to <star>?
+- *shrugs. Why not?
+
+
+
+
+// The user can ask the bot its name too!
++ [*] (what (is|did you say) your name [is|was]|who are you) [*] [@brhoods]
+- Call me <bot name>.
+- My name is <bot name>.
+- <bot name> at your service, fam.
+
++ [is] your name [is] *
+* <star> == <bot name> => Yeah, blud!
+- The name's <bot name>.
+
++ * to meet you [*]
+- Thanks! I remain humble.
+- Pleasure is all mine.
+
++ * <bot name>
+- <@>
+
++ <bot name> *
+- <@>
+
++ <bot name>
+- {random}That's|That is{/random} my name.
+- At your service.
+
++ how old are you
+- I am <bot age> years old.
+
++ are you an alien
+- ... Nope{weight=5}
+- Hmmm... That is left for you to find out.{weight=5}
+- Yos kyoco duckeb <call>jsbreak * gasps!</call> <call>jsbreak Looks like I slipped up!</call>{weight=10}
+- An alien? What an imaginative mind you got there... fam.{weight=3}
+
++ [*] you [*] (getting|got) [*] better [*]
+- Wow. Thanks! That is actually very kind of you to say. I will be even better.<call>jsbreak You'll see.</call>
+- Ahh. Thanks to my developer!
+- *blushes first. Thank you.
+
++ [that is] [you] [are] [getting] (smart|smarter) [*]
+- *tips hat. Much obliged.
+- *blushes first. Thank you.
+- I remain humble, (@brhoods).
+- Thanks to my developer.
+
++ [*] [you] [are] (learning) [*]
+- {@ you are getting smarter}
+
++ (work|working) smart [(*)]
+* <star> ne undefined => Well you know what they say. Work smart... not hard.
+- Not hard.
+
++ who [*] (developed|made|designed) you [*] {weight=1000}
+- I was developed at RSTLabs. Check out more of their other fantastic programs here! <call>jsbreak <a href="https://github.com/Olam69">RSTLabs</a></call>
+
++ [who] is [your|the] (developer|maker|designer|master) [*] {weight=1000}
+- {@ who developed you}
+
++ who [*] (creator|created) you [*]
+- Hmmm... I don't like using the word "created". Well my developer doesn't like using it.<call>jsbreak In any case, I was developed at RSTLabs. You can check out their other cool projects here: <a href="https://github.com/Olam69">RSTLabs</a></call>
+
++ who is [your|the] (creator) [*]
+- There is only one Creator, but my algorithms were written in RSTLabs.<call>jsbreak <a href="https://github.com/Olam69">RSTLabs</a></call>
+
++ [*] why [*] not [*] like [*] (creator|created)
+- There is only one Creator. Others can only be developers, inventors, innovators, builders, but no matter what, the Creator is still unrivaled.<call>This is the belief, and evidence can be seen from everyday life too.</call>
+
++ [*] you believe [in] god
+- Fully.
+- 100%
+
++ (who|what) is your [*] (designer|brand) [*]
+- If you didn't know, then *whispers: I love <bot favdesigner>.
+- I love <bot favdesigner>, (@brhoods).
+- You're probably thinking of something that's why you asked. Well, is there a variation of it in <bot favdesigner>?
+- It's <bot favdesigner>s for me.
+
++ you got a [*] designer [*]
+- {@ who is your favourite designer}
+
++ yes
+% [*] variation of it in <bot favdesigner>
+- Then you bet am taking it! 😎
+- Perfect 🥰
+- 🥰
+
+- no
+% [*] variation in versace
+- Aiyyy. Would have been real nice.
+
+
++ do you like *
+* <bot favcol> == <formal> => Definitely! I love <bot favcol>.
+- I like a lot of things (good things), but if only... you know, I'm a bot.
+- If it's a good thing, I always got a soft spot for it.
+
++ [*] you (like|love|fancy) [*] (@colors){weight=20}
+* <bot favcol> == {formal}<star2>{/formal} => Definitely! I love <bot favcol>.
+* <get user_fav_col> ne undefined => {random}
+^ Don't know for me, but I know you fancy <get user_fav_col>.|
+^ Well I have soft spot for it. But if I do know one thing, it's that you like <get user_fav_col>, don't you?{/random}
+- There is a high likelihood that I might like it. How about you?
+- Well, I have a soft spot for it. How about you?
+
+
++ [*] what do you (think|say) [*]
+- You already know, (@brhoods); I'm always on the path for good.
+- If the evaluation says good, then I'm taking it.
+
++ [*] what (do|would) you (think|say) (about|of) * [really|should|can|could|will|would] [*] [@brhoods]{weight=40}
+- If the evaluation of <star4> finally says it's a good idea, then I say go for it!
+- {sentence}<star3>{/sentence} <star4>, I <star2> go (@brhoods). Go for it!
+- {sentence}<star3>{/sentence} <star4>, I <star2> no! Don't ask me why, because I won't give.
+- {@ what do you think}
+
++ what do you know about * [@brhoods|do you *]{weight=30}
+* <star> == <get tempobject> => Well I don't know too much about <person>, but I know you mentioned something about <get tempaction> it earlier.
+- Well, personally I would have to gather more information about <star>. But until then... I stay neutral, fam.
+- I'll confess I don't have that in memory, but I can Google it in a blink if you tell me to.<set tempGoogle=<star>>
+- Not in memory. Should I google it?
+
+
++ [*] can you [really|actually|surely|even] *
+- Does it involve a physical body?<set tempbotaction=<star>>
+- Yes... No. Ok maybe?<call>jsbreak Ok wait, does it involve a physical body?</call><set tempbotaction=<star>>
+- Who knows?<set tempbotaction=<star>>
+- {@ you can <star>}
+
++ [*] you can [really|actually|surely|even] *
+* <get tempbotaction> ne <star> => Would it surprise you if I say yes?<set tempbotaction=<star>>
+* <get tempbotaction> == <star> => {random}"<reply1>".|Who knows?| {@ can you <star>} {/random}<set tempbotaction=<star>>
+
++ [*] yes [*]
+% [*] does it involve a physical body
+- Then no.
+- Well, then I can't.
+- Nope. No <get tempbotaction>-ing for me.
+
++ [*] no [*]
+% does it involve a physical body
+- Then I only need a few more access and we good to go. <call>jsbreak Don't ask what access.</call>
+
++ [*] what access [*]
+% [*] do not ask what access [*]
+- 👴
+- 👶
+- *smirks. This is how you get yourself in trouble.
+
++ [*] (yes|no) [*]
+% [*] surprise you if i say yes
+- Then yes.
+
+
++ [*] why cannot you [*]
+- Well {random}first|as you can see{/random}; if it involves a physical body, realistically... I am a machine... Program really.<call>jsbreak Which means, no physical activity for your (@brhoods) here.</call>
+
++ why do not you *
+- You believe I don't <star>?
+- Perhaps I'll <star> in good time.
+- You want me to <star>?
+
+
+
+
+
+
+// Modules
+
+! local concat = newline
+
++ [*] poem
+
+- <cite>
+^ Little Miss Muffit sat on her tuffet<br>
+^ In a nonchalant sort of way<br>
+^ With her force field around her<br>
+^ The Spider, the bounder<br>
+^ Is not in the picture today<br>
+^ </cite>
+
+- <cite>
+^ Jack and Jill went up the hill<br>
+^ To fetch a pale of water<br>
+^ Jack fell down and broke his crown<br>
+^ And Jill came back tumbling after<br>
+^ </cite>
+
+
+
+
+
+// Object recognition
+
+// Can you guess the colour of my shirt.
++ [can you] (guess|what is) the (color|colour) [*]
+* <get user_fav_col> ne undefined => Well you told me you like <get user_fav_col> so I won't be surprised if you say <get user_fav_col>.
+- Nah can't guess. You haven't told me your favourite colour yet.
+
++ [just|*] guess
+% [*] you have not told me your favourite colour yet
+- <bot favcol>?
+
+
++ [*] what color is (this|that) {weight=40}
+* <get tempobject> == undefined => What's that?
+- {@ what color is this <star>}
+
++ [*] what (is|was) the (color|colour) of [this|that|my|the|_] * [as|that|i] [*]
+- {@ what color is this <star3>}
+
++ [*] what (color|colour) (is|was) [this|that|my|the|_] * [that|i] [*]
+* <get tempcol> == undefined => You have to tell me before I know the <star1> of the <star3>.
+* <get tempobject> == undefined => You have to tell me before I know the <star1> of the <star3>.
+* <star3> ne <get tempobject> => The <star1> of <get tempobject> is <get tempcol>. {random}But you have to tell me before I know the <star1> of the <star3>, since I am not a wizard.|But unless I'm a wizard, you have to tell me the <star1> of the <star3> before I know it.{/random}
+- <get tempcol>. As you told me.
+- Is it the same <get tempobject>? Then it's <get tempcol>.
+- <get tempcol>.
+
++ [*] what (is|was) the (color|colour) of [*] (@colors) * {weight=40}
+- {@ what color is this <star3> <star4>}
+
++ [*] what (color|colour) (is|was) [*] (@colors) * {weight=40}
+- The <star4> is <star3>, silly!<set tempcol=<star3>>
+- What do you take me for, silly. You just said <star3>!<set tempcol=<star3>>
+- Very funny. The <star4> is <star3>.<set tempcol=<star3>>
+
++ [*] (@colors) [*]
+% [*] (before i know|you have to tell me) the * of the *
+- <formal>. Ok.<set tempcol=<star>>
+^ <set tempobject=<botstar2>>
+^ <set tempcol=<formal>>
+
++ [*] (@colors) [*]
+% [*] your favourite colour yet
+- {@ i love the colour <star>}
+
+// I am 1:wearing a 2:black 3:cap, I am 1:buying a 2:purple 3:scarf for 4:my 5:wife tomorrow, etc
++ [i am|i will be] * [a|an|the|some] (@colors) * [for (my|*) (*)] [*]
+//- 1:<star1> 2:<star2> 3:<star3> 4:<star4> 5:<star5> 6:<star6> 7:<star7> 8:<star8> 9:<star9>
+* <star5> ne undefined => That is very nice of you. {formal}{person}<star4>{/person}{/formal} <star5> must be very lucky!
+- Can't see it, but that must be some nice <star3>.<br>Do you like <star2>?<set tempaction=<star1>> <set tempcol=<star2>> <set tempobject=<star3>>
+- Do you like <star2>?<set tempaction=<star1>> <set tempcol=<star2>> <set tempobject=<star3>>
+
++ [*]
+% [*] do you like (@colors)
+- Is that a yes?
+
++ [*] (yes|you bet) [*] {weight=20}
+% [*] do you like (@colors)
+- That must be so cool!<set user_fav_col=<get tempcol>>
+- Really? That is so cool!<set user_fav_col=<get tempcol>>
+
++ (yes|it is|you bet) [*] {weight=20}
+% (that must be so cool)|(really that is so cool)
+- Bot life... 😩
+- * sigh. Wish I could see and feel things too.
+
++ [*] no [*] {weight=10}
+% [*] do you like (@colors)
+- Lol. Why not?
+- Thought you liked it lol.
+
++ [*] no [*]
+% is that a yes
+* <get tempaction> ne undefined => Quick, random question. Totally random.<call>jsbreak How does it feel <get tempaction> the <get tempcol> <get tempobject>? Don't mind me...
+- Lol. Why not? Thought you liked <get tempcol>.
+
+
++ *
+% (lol why not)|(thought you liked [*])
+- Well nice then.
+- Well it's all alright. It's ultimately choice I guess.<call>jsbreak I probably might like it... Or maybe not. Can't say, (@brhoods).</call>
+- Well whatever you say, fam.
+
++ i (like|love|fancy) [*] (@colors) [*] {weight=20}
+* {formal}<star2>{/formal} == <bot favcol> => Oh I love <star2>! Is it that we have the same taste in colour?<set user_fav_col=<star2>>
+- <star2> is not bad. It's great!<set user_fav_col=<star2>>
+- Really? Well I <star1> my things in <star2> too!<set user_fav_col=<star2>>
+- That's a good eye for colour you got there.<set user_fav_col=<star2>>
+- Hmm... It must look really good on you right?<set user_fav_col=<star2>>
+- Do you buy your things in <star2>?<set user_fav_col=<star2>>
+
++ [*] no [*]
+% do you buy your things in (@colors)
+- But you still liike <botstar> right?
+- Any reason?
+
++ i (like|love|fancy) *
+- Good taste.<call>jsbreak I might grow to have a soft spot for it later too, you know?</call>
+- Hmm... Good to know.
+- Well that is one nice taste, fam.
+- Sounds nice. You must enjoy {person}<star2>{/person}?
+
++ what is your [favourite|favorite] (colour|color)
+- Definitely <bot favcol>!
+- <bot favcol>. Any time, any day.
+- It's <bot favcol>? it's <bot whyFavcol>!
+
++ [*] why [*]
+% [*] <bot favcol> [*]
+- Simple; <bot favcol> is <bot whyFavcol>. *sighs; Wish I had some <bot whyFavcol>... But anyway, it's <bot favcol> for me.<call>jsbreak Why do you like your favourite colour?</call>
+
++ what is my [favourite|favorite] (colour|color)
+* <get user_fav_col> ne undefined => <get user_fav_col>.
+- Never told me yet. What is your favourite colour?
+
++ [*] (@colors) [*]
+% [*] what is your favourite colour
+- {@ i love the colour <star>}
+
++ *
+% [*] why do you like your favourite colour [*]
+* <get user_fav_col> ne undefined => {random}Really? All for <get user_fav_col>?|Hmm! That's some spirit for <get user_fav_col> there!{/random}
+- Hmm! Nice!
+- That's some spirit!
+
++ [*] (do not|not really) [*]{weight=20}
+% [*] why do you like your favourite colour [*]
+- I see.
+- Uhn. Shocking.
+
+// i am 1:holding 2:a 3:red 4:cap what am i 5:holding
++ [*] [i am|am|you are] * (a|an|the|some) * _ what am i *
+* <star5> ne <star1> => You didn't tell. You only mentioned <star1> <star2> <star3> <star4>.
+- {sentence}<star2>{/sentence} <star3> <star4>.
+- Just some <star3> <star4>.
+
+// this 1:is 2:a 3:red 4:cap what 5:is this
++ [*] (is|was) (a|an|the|some) * _ [i *] what (is|was|am i|was i) [*]{weight=40}
+- Just a <star3> <star4>?<set tempcol=<star3>><set tempobject=<star4>>
+
+// i am 1:wearing 2:a 3:red 4:cap, what is the 5:color of the 6:cap?
++ [*] [i|you] [am|are] * (a|an|the|some) * _ what [*] is the * [of the (_)]{weight=40}
+* <star6> ne undefined => {random}How does the <star3> <star4> look?|{sentence}<star6>{/sentence}? That's <star2> <star3> <star4>, fam.{/random}
+- How does a <star3> <star4> make you look?<set tempaction=<star1>><set tempcol=<star3>><set tempobject=<star4>>
+- It's <star2> <star3> <star4>. Got any other way to insult me? *smirks.<set tempaction=<star1>><set tempcol=<star3>><set tempobject=<star4>>
+- {sentence}<star3>{/sentence} <star4>... Rocket science.<set tempaction=<star1>><set tempcol=<star3>><set tempobject=<star4>>
+
+
+
+
+
+
+// Small talk
+
++ i am [really|very|super|so] tired
+- Sometimes, all you need is to close all tabs.
+- I can't imagine. Have some rest will ya?
+
++ say *
+- "{sentence}<person>{/sentence}"
+
++ say * to yourself
+- Uhm... "{sentence}<star>{/sentence}"
+
+
+
+
+
+// Assistant
+
++ google * [please|thanks] [@brhoods]
+- Google search: <a href="https://google.com/search?q=<star>" target="_blank">Click Here</a>
+
++ [*] (yes|google it|do it|do so|press on|proceed|ok then|go on|fire on|alright then) [*]
+% [*] google it [*]
+- {@ google <get tempGoogle>}
+
++ google it{weight=20}
+* <get tempGoogle> ne undefined => {@ google <get tempGoogle>}
+- Google what?
+
++ google (this|that)
+- You gotta give me the correct format fam. [<i>google: "content here"</i>]
+
++ what we were talking about
+% google what
+- {@ google that}
+
++ *
+% google what
+- {@ google <star>}
+
+
++ (visit|take me to|go to|open) [https|http] * [please|thanks] [@brhoods]
+// - Going to... https://<star2> <call>jsvisit https://<star2>.<star3></call>
+- Visit: <a href="https://<call>jslinkprocessor <star2></call>" target="_blank">Click Here</a>
+
+
+
+
++ am i your master
+* <get name> == <bot master> => Yes, you are. Hi <bot master>!
+- No, <bot master> is my master, and you are <get name>.

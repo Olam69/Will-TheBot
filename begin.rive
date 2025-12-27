@@ -1,0 +1,134 @@
+! version = 2.0
+
+
+/* TIP: Symbols and Names;
+	+ = Trigger
+	- = Reply
+	^ = Continuation
+	! = Definition
+	{}lorem ipsum{} = Tag
+	// = Comment
+*/
+
+
+// Coding chatbots is like talking to yourself. You get to whip out whatever personality you wish to potray. It's weird fun!
+
+
+// Setting Bot variables
+! var name		= Will
+! var age 		= n
+! var master 	= RST
+! var favcol 	= Green
+! var whyFavcol	= life
+! var favdesigner = Versace
+
+
+// Setting Substitutions
+! sub i'm     = i am
+! sub i'mma   = i will
+! sub i ain't = i am not
+! sub ain't you = are you not
+! sub i'd     = i would
+! sub i've    = i have
+! sub i'll    = i will
+! sub it's	  = it is
+! sub its     = it is
+! sub don't   = do not
+! sub isn't   = is not
+! sub you'd   = you would
+! sub you're  = you are
+! sub you've  = you have
+! sub you'll  = you will
+! sub what's  = what is
+! sub whats   = what is
+! sub what're = what are
+! sub what've = what have
+! sub what'll = what will
+! sub who's   = who is
+! sub how're  = how are
+! sub how'd   = how did
+! sub how you = how are you
+! sub can't   = cannot
+! sub can not = cannot
+! sub couldn't = could not
+! sub won't   = will not
+! sub wouldn't = would not
+! sub shouldn't = should not
+! sub mightn't = might not
+! sub haven't = have not
+! sub pls     = please
+! sub yea     = yes
+! sub yeah    = yes
+! sub yep     = yes
+! sub sure    = yes
+! sub you bet = yes
+! sub you betcha = yes
+! sub si      = yes
+! sub fire on = yes
+! sub press on = yes
+! sub for sure= yes
+! sub of course  = yes
+! sub definitely = yes
+! sub nah     = no
+! sub naah    = no
+! sub nope    = no
+! sub of course not  = no
+! sub definitely not = no
+! sub not really     = no
+! sub not at all     = no
+! sub don't   = do not
+! sub i do not think so = no
+! sub don't you = do you not
+! sub doin'   = doing
+! sub doin    = doing
+! sub tryna   = trying to
+! sub try'na  = trying to
+! sub a'it    = alright
+! sub &       = and
+
+
+
+// Setting arrays
+
+// Array of colors (Remember: You separate single word objects with space, multiple word objects with '|' in arrays)
+! array colors = red blue green yellow orange cyan fuchsia magenta black gray white silver purple gold maroon indigo violet
+^ light red|dark red|light blue|dark blue|sky blue|pale blue|lightblue|light yellow|dark yellow|light orange|dark orange|light cyan|dark cyan|light fuchsia|dark fuchsia|light magenta|dark magenta|light gray|dark gray
+
+// Greetings in the hood
+! array brhoods = yo fam bro bruh cuz homie hombre homs blud amigo man mahn dude boss
+
+// Sweet words
+! array goodwords = excellent|wonderful|good|outdone yourself|outdid yourself|well done|nicely done|fantastic
+
+
+// The 'person' swapper
+! person me      = you
+! person my      = your
+! person your    = my
+! person you     = me
+! person i       = you
+! person i am    = you are
+! person you are = I am
+! person are you = you are
+
+
+
+
+
+// Making sure Bot has met user, and user has met Bot
+
+> begin
+
+  + request
+  * <get met> == undefined => <set met=true>{topic=new_user}{ok}
+  - {ok}
+
+< begin
+
+> topic new_user
+
+  + *
+  - Hey, fam! I'm <bot name>; a chatbot from RSTLabs written in RiveScript.<call>jsbreak What is your name?</call>{topic=random}
+
+< topic
+
